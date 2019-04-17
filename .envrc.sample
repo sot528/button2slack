@@ -5,6 +5,12 @@ export SERVERLESS_SERVICE_NAME_PREFIX=foobar
 # AWS IoT 1clickのデバイスID
 export IoT1CLICK_DEVICE_ID=G030PMxxxxxxxxxx
 
+# SlackのIncoming web hookのURL
+export SLACK_NOTIFICATION_URL=https://hooks.slack.com/services/xxxxx/xxxxx
+
+# 送信するメッセージ
+export MESSAGE=foobar
+
 # --- AWS ---
 
 ## aws-cli

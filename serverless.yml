@@ -42,13 +42,13 @@ functions:
       SLACK_NOTIFICATION_URL: ${env:SLACK_NOTIFICATION_URL}
       MESSAGE: ${env:MESSAGE}
 
-#resources:
-#  Resources:
-#    IoT1ClickButton:
-#      Type: "AWS::IoT1Click::Device"
-#      Properties:
-#        DeviceId: ${env:IoT1CLICK_DEVICE_ID}
-#        Enabled: "true"
+resources:
+  Resources:
+    IoT1ClickButton:
+      Type: "AWS::IoT1Click::Device"
+      Properties:
+        DeviceId: ${env:IoT1CLICK_DEVICE_ID}
+        Enabled: "true"
 
 # なぜかエラーになるため以下は手作業で構築
 #    BasicProject:
