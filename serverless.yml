@@ -40,6 +40,7 @@ functions:
       - {Ref: CommonLambdaLayer}
     environment:
       SLACK_NOTIFICATION_URL: ${env:SLACK_NOTIFICATION_URL}
+      MESSAGE: ${env:MESSAGE}
 
 #resources:
 #  Resources:
