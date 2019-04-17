@@ -9,7 +9,12 @@ export IoT1CLICK_DEVICE_ID=G030PMxxxxxxxxxx
 export SLACK_NOTIFICATION_URL=https://hooks.slack.com/services/xxxxx/xxxxx
 
 # 送信するメッセージ
-export MESSAGE=foobar
+export MESSAGE=`cat <<EOD
+@channel:
+＿人人人人人＿
+ ＞　テスト　＜
+￣Y^Y^Y^Y￣
+EOD`
 
 # --- AWS ---
 

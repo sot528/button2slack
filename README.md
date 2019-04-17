@@ -6,5 +6,6 @@
 1. Set Device ID env  
    `direnv edit`
 1. `./deploy.sh`
+1. Create IoT 1click project & setting created Lambda to the device.
 1. Push the button
    
