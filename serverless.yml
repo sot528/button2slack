@@ -1,0 +1,72 @@
+service: ${env:SERVERLESS_SERVICE_NAME_PREFIX}-Button2slack
+
+frameworkVersion: ">=1.40.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: ap-northeast-1
+
+package:
+  individually: true
+  include:
+    - handlers/*
+  exclude:
+    - .git/**
+    - venv/**
+    - tmp.*
+    - _tmp*
+    - .envrc*
+    - deploy.sh
+    - .python-version
+    - .git*
+    - jira*
+    - empty_event.json
+    - README.md
+
+layers:
+  common:
+    path: layers/common
+    name: ${self:service}-common
+    compatibleRuntimes:
+      - python3.6
+    allowedAccounts:
+      - '*'
+
+functions:
+  main:
+    handler: handler.handler
+    layers:
+      - {Ref: CommonLambdaLayer}
+    environment:
+      SLACK_NOTIFICATION_URL: ${env:SLACK_NOTIFICATION_URL}
+
+#resources:
+#  Resources:
+#    IoT1ClickButton:
+#      Type: "AWS::IoT1Click::Device"
+#      Properties:
+#        DeviceId: ${env:IoT1CLICK_DEVICE_ID}
+#        Enabled: "true"
+
+# なぜかエラーになるため以下は手作業で構築
+#    BasicProject:
+#      Type: "AWS::IoT1Click::Project"
+#      Properties:
+#        ProjectName: "project-with-placements"
+#        Description: "description"
+#        PlacementTemplate:
+#          DefaultAttributes:
+#            Attribute: Value
+#            Foo: Bar
+#          DeviceTemplates:
+#            DefaultTemplate:
+#              DeviceType: "button"
+#              CallbackOverrides:
+#                onClickCallback:
+#                  Fn::GetAtt: [ "StopStartLambdaFunction", "Arn" ]
+#    BasicPlacement:
+#      Type: "AWS::IoT1Click::Placement"
+#      Properties:
+#        ProjectName: !Ref BasicProject
+#        PlacementName: "Button2slack-placement"
