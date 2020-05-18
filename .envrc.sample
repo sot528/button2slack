@@ -1,7 +1,4 @@
 # --- APPLICATION ---
-# ServerlessアプリケーションのService名のPREFIX
-export SERVERLESS_SERVICE_NAME_PREFIX=foobar
-
 # AWS IoT 1clickのデバイスID
 export IoT1CLICK_DEVICE_ID=G030PMxxxxxxxxxx
 

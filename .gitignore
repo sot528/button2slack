@@ -30,3 +30,6 @@ credencials/*
 
 # layers
 layers/**/python
+
+# node
+node_modules

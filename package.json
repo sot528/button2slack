@@ -1,0 +1,26 @@
+{
+  "name": "button2slack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "^1.71.1",
+    "serverless-python-requirements": "^5.1.0"
+  },
+  "scripts": {
+    "deploy": "npx sls deploy",
+    "invoke": "npx sls invoke",
+    "remove": "npx sls remove"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sot528/button2slack.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sot528/button2slack/issues"
+  },
+  "homepage": "https://github.com/sot528/button2slack#readme"
+}
